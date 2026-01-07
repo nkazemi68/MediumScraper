@@ -1,15 +1,15 @@
 from dataclasses import dataclass
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Any
 
 
 @dataclass
-class Topic:
+class TopicData:
     topic_id: str
     title: str
 
 
 @dataclass
-class User:
+class UserData:
     user_id: str
     username: str
     name: Optional[str] = None
@@ -25,11 +25,11 @@ class User:
 
     user_meta: Optional[Dict[str, str]] = None
 
-    about: Optional[str] = None
+    about: Optional[Any] = None
 
 
 @dataclass
-class Post:
+class PostData:
     post_id: str
     author_id: str
     title: str
@@ -43,6 +43,6 @@ class Post:
 
 
 @dataclass
-class Follower:
+class FollowerData:
     user_id: str
     followed_user_id: str
